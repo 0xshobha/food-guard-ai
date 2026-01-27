@@ -1,0 +1,13 @@
+{
+  "name": "food-guard-ai",
+  "version": "1.0.0",
+  "description": "**FoodGuard AI** is a premium, smart food expiry tracker designed to help you reduce waste and manage your kitchen inventory. It features a modern, dark-themed UI with \"Fresh Green\" accents and smooth animations.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
