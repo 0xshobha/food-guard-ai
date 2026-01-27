@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodGuard AI - Smart Food Expiry & Waste Reducer</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar / Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="ri-leaf-line"></i>
+                <span>FoodGuard</span>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><a href="#"><i class="ri-dashboard-line"></i> Dashboard</a></li>
+                <li><a href="#"><i class="ri-fridge-line"></i> Inventory</a></li>
+                <li><a href="#"><i class="ri-pie-chart-line"></i> Analytics</a></li>
+                <li><a href="#"><i class="ri-settings-4-line"></i> Settings</a></li>
+            </ul>
+            <div class="user-profile">
+                <div class="avatar">
+                    <img src="https://ui-avatars.com/api/?name=User&background=10b981&color=fff" alt="User">
+                </div>
+                <div class="user-info">
+                    <h4>My Kitchen</h4>
+                    <p>Free Plan</p>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="welcome-text">
+                    <h1>Hello, User! 👋</h1>
+                    <p>Let's save some food today.</p>
+                </div>
+                <button class="add-btn" id="openModalBtn">
+                    <i class="ri-add-line"></i> Add Item
+                </button>
+            </header>
+
+            <!-- Stats Section -->
+            <section class="stats-grid" id="statsGrid">
+                <div class="stat-card">
+                    <div class="icon-box green">
+                        <i class="ri-shield-check-line"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>94%</h3>
+                        <p>Guard Score</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon-box orange">
+                        <i class="ri-alarm-warning-line"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>3 Items</h3>
+                        <p>Expiring Soon</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon-box blue">
+                        <i class="ri-recycle-line"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>1.2 kg</h3>
+                        <p>Waste Saved</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Expiring Soon Section -->
+            <section class="inventory-section">
+                <div class="section-header">
+                    <h2>Expiring Soon</h2>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="inventory-list" id="inventoryList">
+                    <!-- Items will be injected here via JS -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Add Item Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Add New Item</h2>
+                <button class="close-btn" id="closeModalBtn"><i class="ri-close-line"></i></button>
+            </div>
+            <form id="addItemForm">
+                <div class="form-group">
+                    <label for="itemName">Item Name</label>
+                    <input type="text" id="itemName" placeholder="e.g., Milk, Avocados" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiryDate">Expiry Date</label>
+                    <input type="date" id="expiryDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category">
+                        <option value="Dairy">Dairy</option>
+                        <option value="Vegetables">Vegetables</option>
+                        <option value="Fruits">Fruits</option>
+                        <option value="Meat">Meat</option>
+                        <option value="Grains">Grains</option>
+                        <option value="Beverages">Beverages</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Add to Inventory</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
